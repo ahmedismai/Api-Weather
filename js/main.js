@@ -1,5 +1,5 @@
 async function search(input) {
-    let weather = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${input}&days=3`);
+    let weather = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=430661a86b934739979213226240612&q=${input}&days=3`);
     if (weather.ok && 400 != weather.status) {
         let weatherApi = await weather.json();
         displayData(weatherApi.location, weatherApi.current),
