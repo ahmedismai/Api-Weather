@@ -18,10 +18,10 @@ function displayData(search, input) {
         var dataOfDate = new Date(input.last_updated.replace(" ", "T"));
         let cartona = `<div class="col-lg-4 pb-5 " style="background-color: #323544;">
         <div class="row p-2" style="background-color: #2D303D;">
-          <div class="col-9">
+          <div class="col-8">
             <span style="color: #BFBCC4;">${days[dataOfDate.getDay()]}</span>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <span  style="color: #BFBCC4;">${dataOfDate.getDate() + monthNames[dataOfDate.getMonth()]}</span>
           </div>
         </div>
