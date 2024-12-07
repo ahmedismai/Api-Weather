@@ -2,8 +2,8 @@ async function search(input) {
     let weather = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=7d77b96c972b4d119a3151101212704&q=${input}&days=3`);
     if (weather.ok && 400 != weather.status) {
         let weatherApi = await weather.json();
-        displayCurrent(weatherApi.location, weatherApi.current),
-        displayAnother(weatherApi.forecast.forecastday)
+        displayData(weatherApi.location, weatherApi.current),
+        displayAnotherData(weatherApi.forecast.forecastday)
     }
 }
 document.getElementById("search").addEventListener("keyup", input => {
@@ -12,7 +12,7 @@ document.getElementById("search").addEventListener("keyup", input => {
 );
 var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-function displayCurrent(search, input) {
+function displayData(search, input) {
     if (null != input) {
          
         var dataOfDate = new Date(input.last_updated.replace(" ", "T"));
@@ -51,7 +51,7 @@ function displayCurrent(search, input) {
         document.getElementById("rowData").innerHTML = cartona
     }
 }
-function displayAnother(search) {
+function displayAnotherData(search) {
     let cartona = "";
     for (let i = 1; i < search.length; i++){
         
